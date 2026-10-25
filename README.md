@@ -1,15 +1,20 @@
+# Домашнее задание к занятию "`Elasticsearch, Kibana, Logstash, Filebeat`" - `Письменный Никита`
+
+
+---
+
 ### Задание 1. Elasticsearch
 
 **Цель:** Установить и запустить Elasticsearch, поменять параметр `cluster_name` на случайный.
 
 **Ход выполнения:**
-1. Добавлен официальный репозиторий Elastic (или зеркало) и установлен пакет `elasticsearch`.
+1. Добавлен официальный репозиторий Elastic и установлен пакет `elasticsearch`.
 2. В файле конфигурации `/etc/elasticsearch/elasticsearch.yml` изменён параметр `cluster.name` на случайное значение: `random-cluster-7f3a9`.
 3. Служба перезапущена командой `sudo systemctl restart elasticsearch`.
 4. Проверка статуса кластера выполнена командой `curl -X GET 'localhost:9200/_cluster/health?pretty'`.
 
 **Скриншот 1. Вывод команды curl с изменённым cluster_name:**
-![Скриншот-1](https://github.com/2222sora2222/ELKhomework/blob/main/img/task1.png)
+![Скриншот-1](img/img1.png)
 
 ---
 
@@ -23,7 +28,7 @@
 3. В консоли Dev Tools выполнен запрос `GET /_cluster/health?pretty`.
 
 **Скриншот 2. Интерфейс Kibana Dev Tools с выполненным запросом:**
-![Скриншот-2](https://github.com/2222sora2222/ELKhomework/blob/main/img/task2.png)
+![Скриншот-2](img/img2.png)
 
 ---
 
@@ -38,7 +43,7 @@
 4. Logstash перезапущен. В Kibana создан Data View `nginx-log-*`.
 
 **Скриншот 3. Логи Nginx в Kibana (Discover), отправленные через Logstash:**
-![Скриншот-3](https://github.com/2222sora2222/ELKhomework/blob/main/img/task3.png)
+![Скриншот-3](img/img3.png)
 
 ---
 
@@ -53,4 +58,4 @@
 4. В Kibana создан Data View `filebeat-nginx-*`. В логах видно, что данные поступают от агента `filebeat`.
 
 **Скриншот 4. Логи Nginx в Kibana (Discover), отправленные через Filebeat:**
-![Скриншот-4](https://github.com/2222sora2222/ELKhomework/blob/main/img/task4.png)
+![Скриншот-4](img/img4.png)
